@@ -1,0 +1,39 @@
+{
+  "build": {
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "simple-task-manager",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "windows": [
+      {
+        "title": "Simple Task Manager",
+        "width": 960,
+        "height": 540
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.ronakkothari.simpletaskmanager",
+      "icon": [
+        "icons/icon.png",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}

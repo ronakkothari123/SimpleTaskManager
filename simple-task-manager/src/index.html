@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Task Manager</title>
+
+    <link rel="icon" href="../src-tauri/icons/icon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="main-wrapper">
+        <div id="sidebar">
+            <h1>Simple Task Manager</h1>
+            <div id="sidebar-buttons">
+                <div class="sidebar-button active-sidebar-button">
+                    <img src="./assets/task-manager.png" alt="">
+                    <p>Task Manager</p>
+                </div>
+                <div class="sidebar-button">
+                    <img src="./assets/timer.png" alt="">
+                    <p>Pomodoro Timer</p>
+                </div>
+            </div>
+        </div>
+        <div id="main-container">
+            <div id="banner-container">
+                <h1 id="main-date"></h1>
+                <div id="main-input-container">
+                    <input type="text" id="main-input" placeholder="Add to your list!">
+                    <div id="main-input-button">
+                        <img src="./assets/plus.png" alt="">
+                    </div>
+                </div>
+                <div id="task-table">
+                    <div>
+                        <h6>Task Name</h6>
+                        <h6>Date Added</h6>
+                        <h6>Action</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
