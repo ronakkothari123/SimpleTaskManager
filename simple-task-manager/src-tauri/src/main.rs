@@ -1,15 +1,26 @@
-// Prevents additional console window on Windows in release, DO NOT REMOVE!!
-#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
 
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+use tauri::{AppHandle, Manager};
+
 #[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+fn show_secondary_window(app_handle: AppHandle) {
+    if let Some(secondary_window) = app_handle.get_window("timer") {
+        secondary_window.show().unwrap();
+        secondary_window.set_focus().unwrap();
+    }
+}
+
+#[tauri::command]
+fn get_window_label(window: tauri::Window) -> String {
+    window.label().to_string()
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![show_secondary_window, get_window_label])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

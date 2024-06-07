@@ -56,6 +56,10 @@ function removeTaskFromLocalStorage(taskName) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+function openPomodoroTimer(){
+    invoke('show_secondary_window');
+}
+
 function addTask() {
     const taskName = document.getElementById('main-input').value;
 

@@ -18,9 +18,21 @@
     },
     "windows": [
       {
+        "label": "tm",
         "title": "Simple Task Manager",
         "width": 960,
         "height": 540
+      },
+      {
+        "title": "Pomodoro Timer",
+        "label": "timer",
+        "width": 384,
+        "height": 128,
+        "url": "pomodoro/index.html",
+        "visible": false,
+        "resizable": false,
+        "skipTaskbar": true,
+        "fullscreen": false
       }
     ],
     "security": {
